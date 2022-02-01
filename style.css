@@ -1,0 +1,111 @@
+/* IMPORTED GOOGLE FONTS */
+@font-face {
+    font-family: 'Robot Mono';
+    src: url('fonts/RobotoMono-Italic-VariableFont_wght.ttf');
+}
+
+/* Global variables */
+:root {
+    --padding: 5px;
+    --margin-hor: 35px;
+    --margin-vert: 35px;
+}
+
+/* Non-Classes and general tags */
+
+body, html {
+  height: 100%;
+  font-family: Verdana, Helvetica, Arial, monospace;
+  color: white;
+  background-color: #313131;
+  margin: auto 5px auto 5px;
+}
+
+/* header styles */
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* a styles */
+a:link {
+    color: cyan;
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(17, 194, 194);
+}
+
+/* img style */
+img, iframe {
+    border-style: solid;
+    border-radius: 8px;
+}
+
+/* Classes */
+/* Backgrounds for different sections */
+.background {
+    --color: #555454;
+    background-color: var(--color);
+    font-size: 30px;
+    border-radius: 8px;
+    padding: var(--padding);
+    margin: var(--margin-vert) var(--margin-hor);
+}
+
+.background p, .background h2, .background h3, .background a, .background iframe {
+    text-align: left;
+    margin-left: 15px;
+}
+
+.background img {
+    margin-left: 15px;
+    margin-top: 25px;
+}
+
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: 15% 85%;
+
+}
+
+.item-text {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 5%;
+}
+
+.item-image {
+    display: block;
+}
+
+/* id tags */
+/* Hero Image AND Hero Text for image */
+#hero-image {
+    background-image: url("images/AnotherMask.png");
+    display: flex;
+    position: relative;
+    height: 70%;
+    background-position: top;
+    background-repeat:no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    margin: var(--margin-vert) var(--margin-hor);
+}
+
+#hero-text {
+    display: block;
+    text-align: center;
+    position: relative;
+    font-family: 'Robot Mono', monospace;
+    font-size: 250%;
+    top: 65%;
+    left: 40%;
+    margin-left: 0;
+}
