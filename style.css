@@ -22,6 +22,16 @@ body, html {
   margin: 0px 0px;
 }
 
+@media(max-width: 500px) {
+    body, html {
+    height: 100%;
+    font-family: Verdana, Helvetica, Arial, monospace;
+    color: white;
+    background-color: #313131;
+    margin: 0px 0px;
+    }
+}
+
 /* header styles */
 h1 {
     text-align: center;
