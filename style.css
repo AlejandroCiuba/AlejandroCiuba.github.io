@@ -14,12 +14,12 @@
 /* Non-Classes and general tags */
 
 body, html {
-  height: 100%;
-  overflow-x: hidden; /* There's a horizontal scrollbar without this */
-  font-family: Verdana, Helvetica, Arial, monospace;
-  color: white;
-  background-color: #313131;
-  margin: 0px 0px;
+    height: 100%;
+    overflow-x: hidden; /* There's a horizontal scrollbar without this */
+    font-family: Verdana, Helvetica, Arial, monospace;
+    color: white;
+    background-color: #313131;
+    margin: 0px 0px;
 }
 
 @media(max-width: 500px) {
