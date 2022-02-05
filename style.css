@@ -14,13 +14,6 @@
 /* Non-Classes and general tags */
 
 body, html {
-    height: 100%;
-    overflow-x: hidden; /* There's a horizontal scrollbar without this */
-    font-family: Verdana, Helvetica, Arial, monospace;
-    color: white;
-    background-color: #313131;
-    margin: 0px 0px;
-
     background-image: url("images/AnotherMask.png");
     height: 100vh;
     width: 100vw;
@@ -29,6 +22,12 @@ body, html {
     background-repeat:no-repeat;
     background-size: cover;
     position: sticky;
+    height: 100%;
+    overflow-x: hidden; /* There's a horizontal scrollbar without this */
+    font-family: Verdana, Helvetica, Arial, monospace;
+    color: white;
+    background-color: #313131;
+    margin: 0px 0px;
 }
 
 @media(max-width: 500px) {
