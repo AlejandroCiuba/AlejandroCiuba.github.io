@@ -25,6 +25,7 @@ body, html {
 @media(max-width: 500px) {
     body, html {
     height: 100%;
+    overflow-y: visible;
     font-family: Verdana, Helvetica, Arial, monospace;
     color: white;
     background-color: #313131;
@@ -38,7 +39,12 @@ h1 {
 }
 
 h2 {
+    text-align: center;
     margin-bottom: 10px;
+}
+
+h3 {
+    text-align: center;
 }
 
 /* a styles */
@@ -68,14 +74,9 @@ img, iframe {
     margin: var(--margin-vert) var(--margin-hor);
 }
 
-.background p, .background h2, .background h3, .background a, .background iframe {
+.background p, .background a {
     text-align: left;
     margin-left: 15px;
-}
-
-.background img {
-    margin-left: 15px;
-    margin-top: 25px;
 }
 
 /* Grid Layout */
@@ -97,6 +98,14 @@ img, iframe {
     display: block;
     position: relative;
     grid-area: 1 / 1;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+
+/* Images/iframes within a grid element with other elements */
+.item-subimage {
+    display: block;
+    margin: auto;
 }
 
 /* id tags */
