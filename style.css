@@ -22,17 +22,6 @@ body, html {
     margin: 0px 0px;
 }
 
-@media(max-width: 500px) {
-    body, html {
-    height: 100%;
-    overflow-y: visible;
-    font-family: Verdana, Helvetica, Arial, monospace;
-    color: white;
-    background-color: #313131;
-    margin: 0px 0px;
-    }
-}
-
 /* header styles */
 h1 {
     text-align: center;
@@ -79,8 +68,8 @@ img, iframe {
     margin-left: 15px;
 }
 
-/* Grid Layout */
-.container {
+/* Grid Layout 1 */
+.container-aboutme {
     display: grid;
     grid-template-columns: .5fr 2.5fr;
     grid-column-gap: 15px;
@@ -88,18 +77,24 @@ img, iframe {
 
 }
 
-.item-text {
+.item-text-aboutme {
     text-align: left;
     /* row start / col start / row end / col end */
     grid-area: 1 / 2;
 }
 
-.item-image {
+.item-image-aboutme {
     display: block;
     position: relative;
     grid-area: 1 / 1;
     margin-left: 15px;
     margin-top: 25px;
+}
+
+/* Grid Layout 2 */
+.container-projects {
+    display: grid; 
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
 }
 
 /* Images/iframes within a grid element with other elements */
@@ -162,7 +157,7 @@ img, iframe {
     width: 100vw;
     background-color: #313131;
     z-index: 2;
-    padding-top: 0px;
+    padding-top: 10px;
 }
 
 #navbar ul {
@@ -195,14 +190,122 @@ img, iframe {
     color: white;
 }
 
-@media screen and (max-width: 500px){
+/* Make mobile friendly */
+@media screen and (max-width: 600px){
+
+    body, html {
+        height: 100%;
+        overflow-x: hidden; /* There's a horizontal scrollbar without this */
+        font-family: Verdana, Helvetica, Arial, monospace;
+        color: white;
+        background-color: #313131;
+        margin: 0px 0px;
+    }
+
+    /* Grid Layout 1 */
+    .container-aboutme {
+        display: grid;
+        grid-template-rows: 300px fit-content(100%);
+        grid-template-columns: 1fr;
+        padding: auto;
+    }
+
+    .item-text-aboutme {
+        text-align: left;
+        /* row start / col start / row end / col end */
+        grid-area: 2 / 1;
+        padding: auto;
+    }
+
+    .item-image-aboutme {
+        display: block;
+        margin: auto;
+        grid-area: 1 / 1;
+    }
+
+    /* id tags */
+    /* Hero Image AND Hero Text for image */
+    #hero-image {
+        background-image: url("images/AnotherMask.png");
+        height: 100vh;
+        width: 100vw;
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat:no-repeat;
+        background-size: cover;
+        position: sticky;
+    }
+
+    #hero-text {
+        font-family: 'Robot Mono', monospace;
+        text-align: center;
+        position: absolute;
+        font-size: 1rem;
+        transform: translate(-50%, -50%); /* Moves movement point to the center of the textbox */
+        top: 50%;
+        left: 50%;
+        color: white;
+    }
+
+    /* Animation which will tell the user to scroll down for more after 4 seconds of idling */
+    #hero-guide {
+        font-family: 'Robot Mono', monospace;
+        text-align: center;
+        position: absolute;
+        opacity: 0;
+        transform: translate(-50%); 
+        font-size: 100%;
+        top: 90%;
+        left: 50%;
+        color: white;
+        animation-name: guideAnim;
+        animation-duration: 2s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+
+    }
+
+    @keyframes guideAnim {
+        from {opacity: 0}
+        to {opacity: 1;}
+    }
+
+    /* Navigation Panel */
+    #navbar {
+        position: sticky;
+        top: 0px;
+        width: 100vw;
+        background-color: #313131;
+        z-index: 2;
+        padding-top: 10px;
+    }
+
+    #navbar ul {
+        list-style-type: none;
+        margin: 0px 0px;
+        padding-top: 0px;
+        padding-bottom: 10px;
+        padding-left: 0%;
+    }
+
+    #navbar li {
+        display: inline;
+        font-size: .75em;
+        margin: .5em .5em;
+    }
+
+    #navbar li a {
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 700;
+        text-decoration: none;
+        color: white;
+    }
+
     #navbar p {
         display: inline;
         font-family: 'Roboto Mono', monospace;
-        font-size: 50%;
-        margin: 1em 1em;
-        margin-left: 20%;
-        text-align: right;
+        font-size: .75em;
+        margin: .5em .5em;
         font-weight: 700;
         text-decoration: none;
         color: white;
