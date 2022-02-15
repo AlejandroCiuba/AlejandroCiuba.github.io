@@ -140,7 +140,7 @@ img, iframe {
     color: white;
     animation-name: guideAnim;
     animation-duration: 2s;
-    animation-delay: 3s;
+    animation-delay: 1.75s;
     animation-fill-mode: forwards;
 
 }
@@ -191,6 +191,13 @@ img, iframe {
 }
 
 /* Make mobile friendly */
+@media screen and (max-width: 1280px) {
+    /* Grid Layout 2 */
+    .container-projects {
+        grid-template: repeat(3, fit-content(100%)) / repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 600px){
 
     /* Global variables */
@@ -212,7 +219,8 @@ img, iframe {
 
     /* img style */
     img, iframe {
-        height: 200px;
+        height: fit-content;
+        width: fit-content;
     }
 
     /* Grid Layout 1 */
@@ -260,12 +268,5 @@ img, iframe {
     #navbar p {
         font-size: .75em;
         margin: .5em .5em;
-    }
-}
-
-@media screen and (max-width: 1280px) {
-    /* Grid Layout 2 */
-    .container-projects {
-        grid-template: repeat(3, fit-content(100%)) / repeat(2, 1fr);
     }
 }
