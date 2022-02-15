@@ -22,23 +22,18 @@ body, html {
     margin: 0px 0px;
 }
 
-@media(max-width: 500px) {
-    body, html {
-    height: 100%;
-    font-family: Verdana, Helvetica, Arial, monospace;
-    color: white;
-    background-color: #313131;
-    margin: 0px 0px;
-    }
-}
-
 /* header styles */
 h1 {
     text-align: center;
 }
 
 h2 {
+    text-align: center;
     margin-bottom: 10px;
+}
+
+h3 {
+    text-align: center;
 }
 
 /* a styles */
@@ -68,18 +63,13 @@ img, iframe {
     margin: var(--margin-vert) var(--margin-hor);
 }
 
-.background p, .background h2, .background h3, .background a, .background iframe {
+.background p, .background a {
     text-align: left;
     margin-left: 15px;
 }
 
-.background img {
-    margin-left: 15px;
-    margin-top: 25px;
-}
-
-/* Grid Layout */
-.container {
+/* Grid Layout 1 */
+.container-aboutme {
     display: grid;
     grid-template-columns: .5fr 2.5fr;
     grid-column-gap: 15px;
@@ -87,16 +77,30 @@ img, iframe {
 
 }
 
-.item-text {
+.item-text-aboutme {
     text-align: left;
     /* row start / col start / row end / col end */
     grid-area: 1 / 2;
 }
 
-.item-image {
+.item-image-aboutme {
     display: block;
     position: relative;
     grid-area: 1 / 1;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+
+/* Grid Layout 2 */
+.container-projects {
+    display: grid; 
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+}
+
+/* Images/iframes within a grid element with other elements */
+.item-subimage {
+    display: block;
+    margin: auto;
 }
 
 /* id tags */
@@ -136,7 +140,7 @@ img, iframe {
     color: white;
     animation-name: guideAnim;
     animation-duration: 2s;
-    animation-delay: 3s;
+    animation-delay: 1.75s;
     animation-fill-mode: forwards;
 
 }
@@ -153,7 +157,7 @@ img, iframe {
     width: 100vw;
     background-color: #313131;
     z-index: 2;
-    padding-top: 0px;
+    padding-top: 10px;
 }
 
 #navbar ul {
@@ -186,16 +190,83 @@ img, iframe {
     color: white;
 }
 
-@media screen and (max-width: 500px){
+/* Make mobile friendly */
+@media screen and (max-width: 1280px) {
+    /* Grid Layout 2 */
+    .container-projects {
+        grid-template: repeat(3, fit-content(100%)) / repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    /* Global variables */
+    :root {
+        --padding: 0px;
+        --margin-hor: 0px;
+    }
+
+    /* Make paragraph text smaller */
+    .background p, .background a {
+        font-size: 70%;
+        margin: 10px auto;
+    }
+
+    ul {
+        margin-block-start: auto;
+        padding-inline-start: 0px;
+    }
+
+    /* img style */
+    img, iframe {
+        height: fit-content;
+        width: fit-content;
+    }
+
+    /* Grid Layout 1 */
+    .container-aboutme {
+        grid-template-rows: 200px fit-content(100%);
+        grid-template-columns: 1fr;
+    }
+
+    .item-text-aboutme {
+        /* row start / col start / row end / col end */
+        grid-area: 2 / 1;
+        padding: auto;
+    }
+
+    .item-image-aboutme {
+        display: block;
+        margin: auto;
+    }
+
+    /* Grid Layout 2 */
+    .container-projects {
+        grid-template: repeat(6, fit-content(100%)) / 100%;
+    }
+
+    /* id tags */
+    #hero-text {
+        font-size: 1rem;
+    }
+
+    /* Animation which will tell the user to scroll down for more after 4 seconds of idling */
+    #hero-guide {
+        font-size: 100%;
+    }
+
+    /* Navigation Panel */
+    #navbar ul {
+        padding-left: 0%;
+    }
+
+    #navbar li {
+        font-size: .75em;
+        margin: .5em .5em;
+    }
+
     #navbar p {
-        display: inline;
-        font-family: 'Roboto Mono', monospace;
-        font-size: 50%;
-        margin: 1em 1em;
-        margin-left: 20%;
-        text-align: right;
-        font-weight: 700;
-        text-decoration: none;
-        color: white;
+        font-size: .75em;
+        margin: .5em .5em;
     }
 }
