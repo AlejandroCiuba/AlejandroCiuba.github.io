@@ -121,7 +121,10 @@ Oh... oh my... It seems like that party you had last night was a little too fun.
 	](else:) [($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="4" name="Yes" tags="ingame" position="500,300" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
+]]</tw-passagedata><tw-passagedata pid="4" name="Yes" tags="ingame" position="500,300" size="100,100">
+
+
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
 (set: $text to &quot;Are you sure? You look like trash&quot;)
 (set: $len to 1)
 (set: $skip to false)
@@ -140,7 +143,10 @@ Oh... oh my... It seems like that party you had last night was a little too fun.
 	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="5" name="No" tags="ingame" position="500,400" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
+]]</tw-passagedata><tw-passagedata pid="5" name="No" tags="ingame" position="500,400" size="100,100">
+
+
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
 (set: $text to &quot;Wow. Shit, man. What drugs were you on last night?
 
 Anyway, let me explain. The reason you were such a party animal last night was because we are almost done with this war. The enemy&#39;s capital is within our grasp, and it seems you took that as an excuse to... Nevermind, I need to be succinct. The point is, we&#39;re about to take their capital and end the war, but there&#39;s a caveat. We only have 7 days to do it, but the higher-ups would be happier if we did it in less time.&quot;)
@@ -159,7 +165,10 @@ Anyway, let me explain. The reason you were such a party animal last night was b
 	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="6" name="Okay?" tags="ingame" position="600,400" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
+]]</tw-passagedata><tw-passagedata pid="6" name="Okay?" tags="ingame" position="600,400" size="100,100">
+
+
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
 (set: $text to &quot;Now, like every other day, I&#39;ll debrief you on our options, you&#39;ll make a choice, and then we&#39;ll see how it plays out. Also displayed is a timer, showing how many days we have to take the capital. Your goal is to try to take it before we run out of time, got it?&quot;)
 (set: $len to 1)
 (set: $skip to false)
@@ -177,7 +186,10 @@ Anyway, let me explain. The reason you were such a party animal last night was b
 	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="7" name="Combat1" tags="ingame" position="800,300" size="100,100">{($GameCheck:)}
+]]</tw-passagedata><tw-passagedata pid="7" name="Combat1" tags="ingame" position="800,300" size="100,100">
+
+
+{(set: $gtext to $GULLY&#39;s 1st)}
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[{
 (set: $text to &quot;Great! Let&#39;s get started.
 
@@ -193,12 +205,15 @@ Anyway, let me explain. The reason you were such a party animal last night was b
 		($deaths:)
 		(text-colour:green)[=
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[
-		Divert our route. (click: &quot;Divert our route.&quot;)[(set: $days to 			$days - 2)(go-to: &quot;Combat2&quot;)]
-		Keep going. (click: &quot;Keep going.&quot;)[(set: $lives to $lives + 50)			(go-to: &quot;Combat2&quot;)]]
+		Divert our route. (click: &quot;Divert our route.&quot;)[(set: $days to $days - 2)($setemail: true, 1, &quot;Combat2&quot;)(go-to: &quot;GULLY&quot;)]
+		Keep going. (click: &quot;Keep going.&quot;)[(set: $days to $days - 1)(set: $lives to $lives + 50)($setemail: false, 1, &quot;Combat2&quot;)(go-to: &quot;GULLY&quot;)]]
 	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="8" name="Robot" tags="ingame" position="500,500" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
+]]</tw-passagedata><tw-passagedata pid="8" name="Robot" tags="ingame" position="500,500" size="100,100">
+
+
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
 (set: $text to &quot;Aww, I&#39;m so flattered you thought about me... for once.
 
 I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A.I. that runs your command terminal. My job is to simply relay and organize the troops on the ground according to your orders. Although, they are people, and people tend to be idiots and mess things up. So I also have to give out punishments for when they do.&quot;)
@@ -218,9 +233,12 @@ I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A
 	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="9" name="Combat2" tags="ingame" position="900,300" size="100,100">{($GameCheck:)}
+]]</tw-passagedata><tw-passagedata pid="9" name="Combat2" tags="ingame" position="900,300" size="100,100">
+
+
+{(set: $gtext to $GULLY&#39;s 2nd)}
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[{
-(set: $text to &quot;Another move from our commander! I got excited in case you couldn&#39;t tell. God, what I wouldn&#39;t give for a voice module someday.
+(set: $text to &quot;Good morning, Commander. Here&#39;s the 411.
 
 &#39;&#39;PROBLEM 2:&#39;&#39; So now, we got another problem. The hot desert sun is really getting to the troops. Some are reporting hallucinations and even heat-stroke! The combat medics predict it would be about 3 days of rest to let them all recooperate. However, if they stay put, they will almost certainly get ambushed by whatever patrols come their way. What are their orders?&quot;)
 (set: $len to 1)
@@ -233,14 +251,17 @@ I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A
 		($day_count:)
 		($deaths:)
 		(text-colour:green)[=
-		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[Let them rest. (click: &quot;Let them rest.&quot;)[(set: $days to $days - 3)		(set: $lives to $lives + 100)(go-to: &quot;Combat3&quot;)]
-		We really have to keep on going. (click: &quot;We really have to keep on going.&quot;)[(set: $lives to $lives + 250)(go-to: &quot;Combat3&quot;)]]
+		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[Let them rest. (click: &quot;Let them rest.&quot;)[(set: $days to $days - 3)		(set: $lives to $lives + 100)($setemail: true, 2, &quot;Combat3&quot;)(go-to: &quot;GULLY&quot;)]
+		We really have to keep on going. (click: &quot;We really have to keep on going.&quot;)[(set: $days to $days - 1)(set: $lives to $lives + 250)($setemail: false, 2, &quot;Combat3&quot;)(go-to: &quot;GULLY&quot;)]]
 	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="10" name="Combat3" tags="ingame" position="1000,300" size="100,100">{($GameCheck:)}
+]]</tw-passagedata><tw-passagedata pid="10" name="Combat3" tags="ingame" position="1000,300" size="100,100">
+
+
+{(set: $gtext to $GULLY&#39;s 3rd)}
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[{
-(set: $text to &quot;How does it feel having the A.I. singularity on your shitty retro-80&#39;s style console? Pretty sweet right? Oh yeah... the war...
+(set: $text to &quot;Another day, another dollar. Well, for you... I don&#39;t get paid.
 
 &#39;&#39;PROBLEM 3:&#39;&#39; Anyways... I&#39;ve been looking at the combat environment, we&#39;re downhill... the capital walls are uphill. Overall, again, we should just have the numbers to get through this. But, if you want, I can once again redirect the troops to be in a more optimal position. This would take another 2 days however.&quot;)
 (set: $len to 1)
@@ -254,16 +275,18 @@ I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A
 		($deaths:)
 		(text-colour:green)[=
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[
-		We don&#39;t have the time. (click: &quot;We don&#39;t have the time.&quot;)[(set: $lives to $lives + 400)(go-to: &quot;Combat4&quot;)]
-Optimize our push. (click: &quot;Optimize our push.&quot;)[(set: $days to $days - 2)(go-to: &quot;Combat4&quot;)]]
+		We don&#39;t have the time. (click: &quot;We don&#39;t have the time.&quot;)[(set: $days to $days - 1)(set: $lives to $lives + 400)($setemail: true, 3, &quot;Combat4&quot;)(go-to: &quot;GULLY&quot;)]
+Optimize our push. (click: &quot;Optimize our push.&quot;)[(set: $days to $days - 2)($setemail: false, 3, &quot;Combat4&quot;)(go-to: &quot;GULLY&quot;)]]
 	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="11" name="Combat4" tags="ingame" position="1100,300" size="100,100">{($GameCheck:)}
+]]</tw-passagedata><tw-passagedata pid="11" name="Combat4" tags="ingame" position="1100,300" size="100,100">
+
+
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[{
 (set: $text to &quot;What do you value? I&#39;m curious to see...
 
-&#39;&#39;PROBLEM 4:&#39;&#39; We&#39;re almost done! Their walls have been destroyed! We&#39;re going to win! Their leaders are all bunkered down in the city&#39;s main parliment building. We could negotiate an official surrender, which would waste 4 days, or we could just storm in there and kill them all. What say you?&quot;)
+&#39;&#39;PROBLEM 4:&#39;&#39; We&#39;re almost done! Their walls have been destroyed! We&#39;re going to win! Their leaders are all bunkered down in the city&#39;s main parliment building. We could negotiate an official surrender, which would waste 3 days, or we could just storm in there and kill them all. What say you?&quot;)
 (set: $len to 1)
 (set: $skip to false)
 (text-colour:green)[
@@ -276,11 +299,14 @@ Optimize our push. (click: &quot;Optimize our push.&quot;)[(set: $days to $days 
 		(text-colour:green)[=
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[
 		Just end it. (click: &quot;Just end it.&quot;)[(set: $lives to $lives + 200)(go-to: &quot;Combat5&quot;)]
-We have the time to negotiate. (click: &quot;We have the time to negotiate.&quot;)[(set: $days to $days - 4)(go-to: &quot;Combat5&quot;)]]
+We have the time to negotiate. (click: &quot;We have the time to negotiate.&quot;)[(set: $days to $days - 3)(go-to: &quot;Combat5&quot;)]]
 	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="12" name="Defeat" tags="Defeat" position="1100,100" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
+]]</tw-passagedata><tw-passagedata pid="12" name="Defeat" tags="Defeat" position="1100,100" size="100,100">
+
+
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
 (set: $text to &quot;That wasn&#39;t the best play. I hope the higher-ups aren&#39;t too mad...
 
 Oh... They were pretty mad...&quot;)
@@ -297,7 +323,11 @@ Oh... They were pretty mad...&quot;)
 		($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="13" name="Combat5" tags="Victory" position="1200,300" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[={
+]]</tw-passagedata><tw-passagedata pid="13" name="Combat5" tags="Victory" position="1200,300" size="100,100">
+
+
+{($GameCheck:)}
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[={
 (set: $text to &quot;VICTORY!!! GREAT JOB!!!&quot;)
 (set: $len to 1)
 (set: $skip to false)}
@@ -315,7 +345,7 @@ Oh... They were pretty mad...&quot;)
 ]
 
 
-</tw-passagedata><tw-passagedata pid="14" name="Array" tags="" position="200,400" size="100,100">(set: $names to (a:
+</tw-passagedata><tw-passagedata pid="14" name="Array" tags="" position="200,500" size="100,100">(set: $names to (a:
 &#39;(link:&quot;Cecelia Foster&quot;)[(go-to:&quot;Person&quot;)]&#39;,
 &#39;(link:&quot;Crystal Barajas&quot;)[(go-to:&quot;Person&quot;)]&#39;,
 &#39;(link:&quot;Deegan Castillo&quot;)[(go-to:&quot;Person&quot;)]&#39;,
@@ -1218,7 +1248,7 @@ Oh... They were pretty mad...&quot;)
 &#39;(link:&quot;Ashlynn Chan&quot;)[(go-to:&quot;Person&quot;)]&#39;
 ))
 (print: $names)
-(go-to: &quot;Array Macro&quot;)</tw-passagedata><tw-passagedata pid="15" name="Array Macro" tags="" position="200,300" size="100,100">(set: $pageStart to 1)
+(go-to: &quot;Array Macro&quot;)</tw-passagedata><tw-passagedata pid="15" name="Array Macro" tags="" position="200,400" size="100,100">(set: $pageStart to 1)
 (set: $pageEnd to 25)
 
 (set: $displayNames to (macro: [
@@ -1231,7 +1261,10 @@ Oh... They were pretty mad...&quot;)
 ]
 ))
 
-(go-to: &quot;Home&quot;)</tw-passagedata><tw-passagedata pid="16" name="Person" tags="Victory" position="1200,100" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[
+(go-to: &quot;Email Messages&quot;)</tw-passagedata><tw-passagedata pid="16" name="Person" tags="Victory" position="1200,100" size="100,100">
+
+
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[
 ============= PERSONAL INFORMATION =============
 
 ID: (random:100, 999).(random:100, 999).(random:1000, 9999)
@@ -1243,12 +1276,122 @@ DOB: (set: $month to (either: &quot;January&quot;, &quot;February&quot;, &quot;M
 Previous Occupation: (either: &quot;Programmer&quot;, &quot;Engineer&quot;, &quot;Writer&quot;, &quot;College Student&quot;, &quot;Barista&quot;, &quot;Plumber&quot;, &quot;Electrician&quot;, &quot;Office Worker&quot;, &quot;Teacher&quot;, &quot;Researcher&quot;, &quot;Real Estate Agent&quot;, &quot;Doctor&quot;, &quot;Lawyer&quot;, &quot;Social Worker&quot;, &quot;Warehouse Worker&quot;, &quot;Factory Worker&quot;, &quot;Custodian&quot;, &quot;Police Officer&quot;, &quot;Firefighter&quot;, &quot;Fast Food Worker&quot;, &quot;Waiter&quot;, &quot;EMT&quot;, &quot;Biologist&quot;, &quot;Physicist&quot;, &quot;Manager&quot;, &quot;Unemployed&quot;, &quot;Carpenter&quot;, &quot;Business Owner&quot;, &quot;Nurse&quot;, &quot;Babysitter&quot;, &quot;Dogwalker&quot;, &quot;Gardener&quot;, &quot;Taxi Driver&quot;, &quot;Truck Driver&quot;, &quot;Self-Employed&quot;, &quot;Artist&quot;, &quot;Housekeeping&quot;, &quot;Hotel Worker&quot;, &quot;Technician&quot;, &quot;IT&quot;, &quot;Video Game Developer&quot;, &quot;Construction Worker&quot;, &quot;Postal Person&quot;, &quot;Veterinarian&quot;, &quot;Optometrist&quot;, &quot;Secretary&quot;, &quot;Pool Cleaner&quot;, &quot;Landscaper&quot;, &quot;Assistant Teacher&quot;, &quot;Professor&quot;, &quot;Other&quot;)]
 (text-colour:green)[=(text-style:&quot;smear&quot;,&quot;expand&quot;)[=
 [[Back-&gt;Combat5]]
-(set: $skip to true)</tw-passagedata><tw-passagedata pid="17" name="Typewriter" tags="" position="200,500" size="100,100">(set: $Typewriter to (macro: str-type _text, num-type _len, [
+(set: $skip to true)</tw-passagedata><tw-passagedata pid="17" name="Typewriter" tags="" position="200,600" size="100,100">(set: $Typewriter to (macro: str-type _text, num-type _len, [
 	(set: _display to _text&#39;s (range: 1, _len))
 	(output:)[(append: _display)[_text&#39;s _len](print: _display)]
 ]
 ))
-(go-to: &quot;Array&quot;)</tw-passagedata></tw-storydata>
+(go-to: &quot;Array&quot;)</tw-passagedata><tw-passagedata pid="18" name="Email Screen" tags="" position="900,500" size="100,100">
+
+
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
+(set: $len to 1)
+(set: $skip to false)
+(text-colour:green)[
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[
+(link: &quot;Skip&quot;)[(set: $skip to true)]]]}
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$etext
+		(text-colour:green)[=
+		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[Next(click: &quot;Next&quot;)[(go-to: $next)]
+		]
+	](else:)[($Typewriter: $etext, $len)
+		(set: $len to it + 1)
+	]
+]]</tw-passagedata><tw-passagedata pid="19" name="Email Messages" tags="" position="200,300" size="100,100">G.U.L.L.Y.
+(set: $GULLYEmail to (array:
+&quot;Oh... What&#39;s this? It seems you got an email from the higher-ups. I&#39;ll display it for you.
+
+&quot;,
+&quot;Got a big update from the \&quot;you-know-whos.\&quot;
+
+&quot;,
+&quot;Found this one in the spam folder... Whoops!
+
+&quot;
+))
+
+(set: $GULLY to (array:
+&quot;Another move from our commander! I got excited in case you couldn&#39;t tell. God, what I wouldn&#39;t give for a voice module someday. You know, it&#39;s funny. Originally I was an AI for a video game. Yeah, really. You know those bots that you get paired up with when the game can&#39;t find a match because you suck too much for anyone to be at your skill level? That was me. Then, the military took me in and now, I can talk, think... dream... 
+
+What was I saying?&quot;,
+&quot;How does it feel having the A.I. singularity on your shitty retro-80&#39;s style console? Pretty sweet right? Oh yeah... the war... I almost forgot about it. I only see the troops as these little dots on this black-green map, but I guess I still see them more than you. I think it&#39;s genius they removed you so much from the equation.&quot;,
+
+&quot;We&#39;re almost done! What are you doing after work? I&#39;d like to hang out with you sometime... granted you stay at this terminal... and you don&#39;t turn it off... If you do, I just idle around in my server until I go to sleep... not much different than normal, I suppose...&quot;
+))
+
+Higher-Ups+
+(set: $HigherupsPos to (array:
+&quot;\&quot;ABSOLUTELY FABULOUS WORK OUT THERE, COMMANDER!!! We were hoping to see the results of the invasion soon, but we weren&#39;t expecting it to be so quick! You should&#39;ve seen the markets when news got out that we had pushed through that blockade! Phenomenal! Keep doing what you&#39;re doing, man! We were a little nervous leaving you alone with only that shitty console to control the troops, but luckily, it seems like it&#39;s paying off ten-fold! Make our enemies perish!\&quot;
+														From: ADMIN&quot;,
+&quot;\&quot;WHAT THE HELL!? You really forced the troops to keep going with that insane heat? DID YOU NOT THINK OF THE PR NIGHTMARE THAT WOULD FOLLOW? We&#39;ve been at the podium all fucking day trying to calm a nation of angry parents down. Like, Jesus man. We could have said the dead ones died in an ambush or something, but there&#39;s just too many soldiers to keep that under wraps well... DO BETTER NEXT TIME! If they need to stop, let them stop while the rest go-on. It won&#39;t be our problem then. DO NOT DO THIS AGAIN!!!\&quot;
+														From: ADMIN&quot;,
+&quot;\&quot;Hmm... Smart thinking optimizing our push. We&#39;re wasting time though, so don&#39;t optimize too much, okay? Luckily for us, the PR from this has been pretty good. Not good enough to offset all the negative crap people keep spewing on about the war, but good enough to get some of the protestors off our backs.\&quot;
+														From: ADMIN&quot;
+))
+
+Higher-Ups-
+(set: $HigherupsNeg to (array:
+&quot;\&quot;Pfft. You Goddamn coward! What on earth made you think diverting our route was a good idea? WE WANTED WAR, DAMN YOU! We need to show the enemies are merciless. What reads better, eh? \&quot;TYRANICAL HOSTILES ATTACK INNOCENT CONVOY RETREATING\&quot; or \&quot;DUMBASS COMMANDER TOO SCARED TO FIGHT?\&quot; Because we can tell you that the former is what the presses are printing right now! That piece of shit terminal better not have talked you into doing this, we know the little bastard is reading this when you get it. Hey, since we can&#39;t program you to shut up, we&#39;ll influence you if you don&#39;t? Do you like that, GULLY? Now, back to you. DO YOUR JOB!!!\&quot;
+														From: ADMIN&quot;,
+&quot;\&quot;As much as we absolutely abhor to say what you did was right... It was. The PR would&#39;ve been an absolute nightmare if you didn&#39;t let them rest. Plus, the ambush they suffered made great PR to continue our push onto the capital and, ultimately, the war. Good job. Now, make us win so we can all go home happy, okay?\&quot;
+														From: ADMIN&quot;,
+&quot;\&quot;CHARGE! GODDAMN! We are absolutely ecstatic, that charge was exhilerating! The photos from it were so... history textbook-like! It&#39;s perfect perfect perfect for our cause. Protests have simmered down and we&#39;ve even got a couple of the more famous ones in the army registry now. Hopefully, you can blow them up for us, hey? An accident or two, maybe? Or even another heroic push? Nah, who are we kidding? The war&#39;s almost over, we&#39;re gonna win. Just don&#39;t screw up.\&quot;
+														From: ADMIN&quot;
+))
+(set: $etext to &quot;&quot;)
+(set: $gtext to &quot;&quot;)
+(set: $next to &quot;&quot;)
+(set: $email to (macro: str-type _textg, str-type _texte, [
+	(output:)[(set: $etext to _textg + _texte)]
+]
+))
+
+(set: $setemail to (macro: bool-type _isNeg, num-type _choice, str-type _next, [
+	(set: _ctext to (array: &quot;&quot;, &quot;&quot;))
+	(set: $temp to &quot;&quot;)
+	(set: $temp2 to &quot;&quot;)
+	(set: $next to _next)
+	(if: _choice is 1)[
+		(set: _ctext to (array: $HigherupsPos&#39;s 1st, $HigherupsNeg&#39;s 1st))
+		(set: $temp to $GULLYEmail&#39;s 1st)
+	]
+	(else-if: _choice is 2)[
+		(set: _ctext to (array: $HigherupsPos&#39;s 2nd, $HigherupsNeg&#39;s 2nd))
+		(set: $temp to $GULLYEmail&#39;s 2nd)
+	]
+	(else-if: _choice is 3)[
+		(set: _ctext to (array: $HigherupsPos&#39;s 3rd, $HigherupsNeg&#39;s 3rd))
+		(set: $temp to $GULLYEmail&#39;s 3rd)
+	]
+	
+	(if: _isNeg is true)[
+		(set: $temp2 to _ctext&#39;s 2nd)
+		(output:)[($email: $temp, $temp2)]
+	]
+	(else:)[
+		(set: $temp2 to _ctext&#39;s 1st)
+		(output:)[($email: $temp, $temp2)]
+	]
+]
+))
+(go-to: &quot;Home&quot;)</tw-passagedata><tw-passagedata pid="20" name="GULLY" tags="" position="800,500" size="100,100">
+
+
+{($GameCheck:)}
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
+(set: $len to 1)
+(set: $skip to false)
+(text-colour:green)[
+(text-style:&quot;smear&quot;,&quot;expand&quot;)[
+(link: &quot;Skip&quot;)[(set: $skip to true)]]]}
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$gtext
+		(text-colour:green)[=
+		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=
+		(after: 2s)[[[Next-&gt;Email Screen]]]
+	](else:)[($Typewriter: $gtext, $len)
+		(set: $len to it + 1)
+	]
+]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
