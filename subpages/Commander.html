@@ -13,9 +13,10 @@
 		display: none;
 }
 
-tw-story[tags~="ingame"] {
+tw-story {
   	color: white;
   	font-family: monospace;
+  	display: block;
   	background-image: url("https://lh3.googleusercontent.com/DPfK3srGdCZjKb97jrlcAdq2bo30C1hNhItT7eoXkLPACdI3fP6P2hPdg3g1KG4vkMDG9kAd7ZNp66vS79DanEcAVqQXfO08XhRzCR6ahDa9WcmdhAC3Z4i66CP_Ii6-nUQg8mKCnA=w2400");
   	background-repeat: no-repeat;
   	background-attachment: fixed;
@@ -25,19 +26,9 @@ tw-story[tags~="ingame"] {
 tw-story[tags~="Defeat"] {
   	color: white;
   	font-family: monospace;
-  	
+  	display: block;
 	background-image: 
 url("https://lh3.googleusercontent.com/FUSSQRKbdsF1-qkVLe_WZ5o6wNsUul5dD1-DDvA8_x2i5k6VwxxA1D5qDHqLufEjGg4Azq5uSDC4_rFtpVWqjyL3aIAdIGsrY5Tl_LzlUadEJqtdEB3C7OpIW5_Cb_sDIxcVnOH6gQ=w2400");
-	background-repeat: no-repeat;
-  	background-attachment: fixed;
-  	background-position: center;
-}
-
-tw-story[tags~="Victory"] {
-  	color: white;
-  	font-family: monospace;
-	background-image: 
-url("https://lh3.googleusercontent.com/DhyUSbD7VPltgdNqNCU-oV7-oyzFCdRbgL3U5SKWQq26CNBXtKLVOprSINxFGO9uFqQheYAswcvLoQ2UicNyWqhSedvqXnqOyuvJhsH5SuEyQlkxqtw7P5bg0TaU1xMepL1KAIItuA=w2400");
 	background-repeat: no-repeat;
   	background-attachment: fixed;
   	background-position: center;
@@ -54,6 +45,13 @@ tw-link, .visited, .enchantment-link {
 tw-link:hover, .visited:hover, .enchantment-link:hover {
   	color: #2cd420;
   	font-size: 1.25rem;
+}
+
+
+@media screen and (min-width: 2000px) {
+  	tw-passage {
+  		margin: 20vh 15vw;
+	}
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Home" tags="ingame" position="200,200" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
 (set: $text to &quot;Commander&quot;)
 (set: $len to 1)
@@ -94,7 +92,10 @@ https://alejandrociuba.github.io&quot;)
 		($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
-]]</tw-passagedata><tw-passagedata pid="3" name="Start" tags="ingame" position="400,300" size="100,100">{(set: $days to 7)
+]]</tw-passagedata><tw-passagedata pid="3" name="Start" tags="ingame" position="400,300" size="100,100">
+
+
+{(set: $days to 7)
 (set: $lives to 0)
 (set: $day_count to (macro:[(output:)[days: $days]]))
 (set: $deaths to (macro:[(output:)[$lives]]))
@@ -108,10 +109,7 @@ Oh... oh my... It seems like that party you had last night was a little too fun.
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
@@ -120,9 +118,7 @@ Oh... oh my... It seems like that party you had last night was a little too fun.
 		(after: 2s)[
 		[[Yes.-&gt;Yes]]
 		[[What?-&gt;No]]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:) [($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="4" name="Yes" tags="ingame" position="500,300" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
@@ -132,10 +128,7 @@ Oh... oh my... It seems like that party you had last night was a little too fun.
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
@@ -144,9 +137,7 @@ Oh... oh my... It seems like that party you had last night was a little too fun.
 		(after: 2s)[
 		[[Now that you mention it, where am I?-&gt;No]]
 		[[Yes, I really do. Let&#39;s get a move on!-&gt;Combat1]]]
-	]
-	(else:)[
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="5" name="No" tags="ingame" position="500,400" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
@@ -158,19 +149,14 @@ Anyway, let me explain. The reason you were such a party animal last night was b
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
 		(text-colour:green)[=(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[
 		[[Okay?-&gt;Okay?]]
 		[[And what the hell are you?-&gt;Robot]]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="6" name="Okay?" tags="ingame" position="600,400" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
@@ -180,10 +166,7 @@ Anyway, let me explain. The reason you were such a party animal last night was b
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
@@ -191,9 +174,7 @@ Anyway, let me explain. The reason you were such a party animal last night was b
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=
 		(after: 2s)[
 		[[Sounds easy enough.-&gt;Combat1]]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="7" name="Combat1" tags="ingame" position="800,300" size="100,100">{($GameCheck:)}
@@ -206,10 +187,7 @@ Anyway, let me explain. The reason you were such a party animal last night was b
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
@@ -217,9 +195,7 @@ Anyway, let me explain. The reason you were such a party animal last night was b
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[
 		Divert our route. (click: &quot;Divert our route.&quot;)[(set: $days to 			$days - 2)(go-to: &quot;Combat2&quot;)]
 		Keep going. (click: &quot;Keep going.&quot;)[(set: $lives to $lives + 50)			(go-to: &quot;Combat2&quot;)]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="8" name="Robot" tags="ingame" position="500,500" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
@@ -231,10 +207,7 @@ I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
@@ -242,9 +215,7 @@ I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=
 		(after: 2s)[
 		[[Okay?-&gt;Okay?]]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="9" name="Combat2" tags="ingame" position="900,300" size="100,100">{($GameCheck:)}
@@ -257,19 +228,14 @@ I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
 		(text-colour:green)[=
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[Let them rest. (click: &quot;Let them rest.&quot;)[(set: $days to $days - 3)		(set: $lives to $lives + 100)(go-to: &quot;Combat3&quot;)]
 		We really have to keep on going. (click: &quot;We really have to keep on going.&quot;)[(set: $lives to $lives + 250)(go-to: &quot;Combat3&quot;)]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="10" name="Combat3" tags="ingame" position="1000,300" size="100,100">{($GameCheck:)}
@@ -282,10 +248,7 @@ I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
@@ -293,9 +256,7 @@ I am G.U.L.L.Y. If you think that stands for something, yeah, I wish. I am the A
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[
 		We don&#39;t have the time. (click: &quot;We don&#39;t have the time.&quot;)[(set: $lives to $lives + 400)(go-to: &quot;Combat4&quot;)]
 Optimize our push. (click: &quot;Optimize our push.&quot;)[(set: $days to $days - 2)(go-to: &quot;Combat4&quot;)]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="11" name="Combat4" tags="ingame" position="1100,300" size="100,100">{($GameCheck:)}
@@ -308,10 +269,7 @@ Optimize our push. (click: &quot;Optimize our push.&quot;)[(set: $days to $days 
 (text-colour:green)[
 (text-style:&quot;smear&quot;,&quot;expand&quot;)[
 (link: &quot;Skip&quot;)[(set: $skip to true)]]]}
-(live: 60ms)[
-	(if: $len is $text&#39;s length or $skip is true)[
-		(stop:)
-		$text
+(live: 60ms)[(if: $len is $text&#39;s length or $skip is true)[(stop:)$text
 		
 		($day_count:)
 		($deaths:)
@@ -319,9 +277,7 @@ Optimize our push. (click: &quot;Optimize our push.&quot;)[(set: $days to $days 
 		(text-style:&quot;smear&quot;,&quot;expand&quot;)[=(after: 2s)[
 		Just end it. (click: &quot;Just end it.&quot;)[(set: $lives to $lives + 200)(go-to: &quot;Combat5&quot;)]
 We have the time to negotiate. (click: &quot;We have the time to negotiate.&quot;)[(set: $days to $days - 4)(go-to: &quot;Combat5&quot;)]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]]</tw-passagedata><tw-passagedata pid="12" name="Defeat" tags="Defeat" position="1100,100" size="100,100">(text-style:&quot;smear&quot;,&quot;expand&quot;)[{
@@ -346,18 +302,14 @@ Oh... They were pretty mad...&quot;)
 (set: $len to 1)
 (set: $skip to false)}
 (live: 60ms)[
-	(if: $len is $text&#39;s length)[
-		(stop:)
-		$text
+	(if: $len is $text&#39;s length)[(stop:)$text
 		(text-colour:green)[=(text-style:&quot;smear&quot;,&quot;expand&quot;)[=
 |names&gt;[($displayNames:)]
 
 |prev&gt;[Prev (click: &quot;Prev&quot;)[(if:$pageStart is 1)[](else:)[(set: $pageStart to $pageStart - 25)(set: $pageEnd to $pageEnd - 25)(rerun:?names)](rerun:?prev)]]|next&gt;[Next (click: &quot;Next&quot;)[(if:$pageEnd is $lives + 0)[](else:)[(set: $pageStart to $pageStart + 25)(set: $pageEnd to $pageEnd + 25)(rerun:?names)](rerun:?next)]]
 
 [[Home-&gt;Home]] [[Credits-&gt;Credits]]
-	]
-	(else:) [
-		($Typewriter: $text, $len)
+	](else:)[($Typewriter: $text, $len)
 		(set: $len to it + 1)
 	]
 ]
