@@ -95,7 +95,7 @@ img, iframe {
 /* Grid Layout 2 */
 .container-projects {
     display: grid; 
-    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 }
 
 /* Images/iframes within a grid element with other elements */
