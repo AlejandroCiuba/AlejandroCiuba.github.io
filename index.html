@@ -1,104 +1,92 @@
-<!--Use ctrl+shift+v to preview using HTML preview--> 
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <title>Alejandro Ciuba - Home</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Ciuba</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-        <meta charset="UTF-8">
-        <meta name="description" content="Personal webpage of Alejandro Ciuba">
-        <meta name="author" content="Alejandro Ciuba">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div id="name">
+                <h1><a href="index.html">Alejandro Ciuba</a></h1>
+            </div>
+            <div id="links">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="cv.html">Curriculum Vitae</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="about_me.html">About Me</a></li>
+                    <!-- <li><a href="index.html">Home</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div class="section">
+                <div id="photo">
+                    <img src="images/alejandro-ciuba.png" alt="Alejandro Ciuba" width="350vw" height="350vh" style="border-radius: 50%;">
+                </div>
+                <div class="information">
+                    <div id="name_information">
+                        <ul>
+                            <li>Alejandro Ciuba</li>
+                            <li>He/They</li>
+                            <li>STIW Lab at the University of Pittsburgh</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="information">
+                    <div id="contact_information">
+                        <ul>
+                            <li class="address">135 N. Bellefield Ave.</li>
+                            <li class="university">University of Pittsburgh</li>
+                            <li class="email"><a href="mailto:alejandrociuba@pitt.edu">alejandrociuba@pitt.edu</a></li>
+                            <li class="academic"><a href="https://scholar.google.com/citations?user=YzLUd9sAAAAJ&hl=en">Google Scholar</a></li>
+                            <li class="social"><a href="https://www.linkedin.com/in/alejandro-ciuba/">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="information">
+                    <div id="about_me">
+                        <h2>About Me</h2>
+                        <p>I am a third year PhD student in computer science at the University of Pittsburgh researching human-computer interaction (HCI) natural-language processing (NLP) systems. I am advised by Dr. Aakash Gautam and co-advised by Dr. Xiang (Lorraine) Li.</p>
+                        <p>I received my B.S. in computer science at the University of Pittsburgh in 2023. During this time, I did educational NLP research with Dr. Diane Litman and developed a speaker segmentation pipeline for the APLS project under Dr. Dan Villarreal.</p>
+                    </div>
 
-        <!--Link style.css to our website-->
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
+                    <div id="research_interests">
+                        <h2>Research Interests</h2>
+                        <p>My research focus examines how community-focused practices within HCI (e.g., participatory design) can elevate NLP systems for participant benefit.</p>
+                        <p>The big questions of my research are:</p>
+                        <ol>
+                            <li>What can researchers do to center the participant(s) when developing NLP systems?</li>
+                            <li>How can NLP systems be used to assist participants in their goals?</li>
+                            <li>When should NLP technologies be considered and what are their long-term outcomes?</li>
+                        </ol>
+                    </div>
 
-    <body>
-        <div id="hero-image">
-            <div id="hero-text">
-
-                <h1>Hello, my name is Alejandro Ciuba</h1>
-
-                <div id="hero-guide">
-                    <p><b><i>Scroll down for more info</i></b></p>
+                    <div id="major_updates">
+                        <h2>Major Updates</h2>
+                        <ul>
+                            <li class="publication">Our research collaboration between STIW Lab and Sensify Lab (University of Delaware), <i>Regulating Social Media: Surveying the Impact of Nepali Government’s TikTok Ban</i>, has been accepted to CSCW 2025!</li>
+                            <li class="academic">I was selected to teach for the NOUR Program, which is designed to give undergraduate students a first experience in research over the summer semester. I ran learning sessions on topics such as citation management, quantatative statistics, and poster design.</li>
+                            <li class="publication">Research with Joey Hou (first author) and Dr. Lorraine Li has been accepted as a workshop paper for the iRAISE workshop at AAAI, <i>Improve LLM-based Automatic Essay Scoring with Linguistic Features</i></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <main>
-            <nav id="navbar">
-                <ul>
-                    <li><a href="#hero-image">Home</a></li>
-                    <li><a href="#About Me">About Me</a></li>
-                    <li><a href="#Projects">Projects</a></li>
-                    <li><a href="index_es.html">Español</a></li>
-                    <p>Contact: alejandrociuba@gmail.com | alc307@pitt.edu</p>
-                </ul>
-            </nav>
-
-            <div class="background" style="margin-top: 0px;">
-                <section  id="About Me">
-                    <h2>About Me</h2>
-
-                    <div class="container-aboutme">
-                        <div class="item-image-aboutme">
-                            <img src="images/photo.jpeg" alt="A photo of me, Alejandro Ciuba" height="300">
-                        </div>
-
-                        <div class="item-text-aboutme">
-                            <p style="text-indent: 50px;">I am a current 2nd year PhD student in computer science at The University of Pittsburgh researching community-focused AI design. I am advised by Drs. Aakash Gautam and Lorraine (Xiang) Li. My previous research has dealt with a wide-range of topics including video game pragmatics and automatic transcription segmentation pipelines. Outside of Academia, my interests include video games, art and linguistics.</p>
-                        </div>
-                    </div>
-                </section>
+        <div id="footer">
+            <div id="copyrights">
+                <p>© 2025 Alejandro Ciuba</p>
             </div>
-
-            <div class="background">
-                <section id="Additional Resources">
-                    <h2>Additional Resources</h2>
-
-                    <p style="text-align: center;">If you want to know more about me, please check out the following links:</p>
-
-                    <ul style="text-align: center;">
-                        <li style="color: cyan; display: inline;"><a href="pdfs/CV-Alejandro-Ciuba.pdf" target="_blank">Curriculum Vitae</a></li>
-                        <li style="color: cyan; display: inline;"><a href="pdfs/Resume-Alejandro-Ciuba.pdf" target="_blank">Resumé</a></li>
-                        <li style="color: cyan; display: inline;"><a href="https://github.com/AlejandroCiuba" target="_blank">Github</a></li>
-                        <li style="color: cyan; display: inline;"><a href="https://www.linkedin.com/in/alejandro-ciuba/" target="_blank">LinkedIn</a></li>
-                        <li style="color: cyan; display: inline;"><a href="subpages/course_list.html">Courses</a></li>
-                        <!-- <li style="color: cyan; display: inline;"><a href="index_es.html">Español</a></li> -->
-                    </ul>
-                </section>
-            </div>
-
-            <div class="background">
-                <h2 id="Projects" style="text-align:center; margin: 5px auto;">Highlighted Projects</h2>
-                <section id="Highlighted Projects" class="container-projects">
-                    <section>
-                        <h3><a href="https://computer-cat.itch.io/flatland-the-game" target="_blank">Video-Game Design</a></h3>
-                        <iframe class="item-subimage" width="560" height="315" src="https://www.youtube.com/embed/enmmMr1R3QI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">CSC Hacks Video</iframe>
-                    </section>
-
-                    <section>
-                        <h3><a href="subpages/nlp.html">Natural-Language Processing</a></h3>
-                        <img src="images/Word_Vector.png" alt="Playing around with Word2Vec" class="item-subimage" style="margin-bottom: 30px;">
-                        <img src="images/C.png" alt="'Colorless green ideas sleep furiously' syntax tree" class="item-subimage">
-                    </section>
-
-                    <!--2nd Row-->
-                    <section>
-                        <h3><a href="subpages/digital_media.html">Digital Media/Art</a></h3>
-                        <img src="images/lighting_project.png" alt="My lighting project" class="item-subimage" height="300">
-                    </section>
-
-                    <section>
-                        <h3>Writings</h3>
-                        <ul style="list-style-type: none; font-size: 25px;">
-                            <li><a href="pdfs/Final Paper, Alejandro Ciuba.pdf">Academic Writing Sample (English)</a></li>
-                            <li><a href="pdfs/Ensayo Final, Alejandro Ciuba.pdf">Academic Writing Sample (Spanish)</a></li>
-                            <li><a href="pdfs/Traduccion Final, Alejandro Ciuba.pdf">Translation Samples (Spanish & English)</a></li>
-                        </ul>
-                    </section>
-                </section>
-            </div>
-        </main>
-    </body>
+        </div>
+    </div>
+</body>
 </html>
