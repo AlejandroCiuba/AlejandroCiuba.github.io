@@ -34,7 +34,6 @@ a {
     color: var(--text-color);
 }
 
-/* https://stackoverflow.com/questions/11679567/using-css-for-a-fade-in-effect-on-page-load */
 @keyframes fadein {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -114,7 +113,6 @@ a {
 }
 
 /* Custom Bullet Points */
-/*https://stackoverflow.com/questions/7775594/css-list-style-image-size */
 
 .publication {
     list-style: none;
