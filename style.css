@@ -250,6 +250,10 @@ a {
 
 /* Custom Information Divs */
 
+#major_updates a {
+    text-decoration: underline;
+}
+
 #about_me h2 {
     margin-top: 0;
 }
