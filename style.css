@@ -55,6 +55,7 @@ a {
     z-index: 2;
     display: flex;
     justify-content: flex-start;
+    gap: 4vw;
 }
 
 #name h1 {
@@ -67,11 +68,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-}
-
-#links ul {
-    margin-right: 30vw;
-    margin-left: 10vw;
 }
 
 #links li {
