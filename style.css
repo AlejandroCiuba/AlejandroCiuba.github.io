@@ -25,7 +25,13 @@ body, html {
 }
 
 ul {
-    list-style-type: none;
+    list-style: none;
+    list-style-position: inside;
+    padding: 0;
+}
+
+ol {
+    list-style-position: inside;
     padding: 0;
 }
 
@@ -71,7 +77,6 @@ a {
 }
 
 #links li {
-    /* display: inline; */
     font-size: 1.5em;
     padding: 0 2vw 0 2vw;
     float: right;
@@ -258,9 +263,9 @@ a {
     margin-top: 0;
 }
 
-#contact_information ul {
+/* #contact_information ul {
     list-style-position: inside;
-}
+} */
 
 #cv {
     display: flex;
