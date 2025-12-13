@@ -43,6 +43,10 @@ a {
     color: var(--text-color);
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 @keyframes fadein {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -75,7 +79,7 @@ a {
     height: 1.25em;
     width: 1.25em;
 
-    background-image: url('icons/site-icons_Publication.svg');
+    background-image: url('../icons/site-icons_Publication.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -94,7 +98,7 @@ a {
     height: 1.25em;
     width: 1.25em;
 
-    background-image: url('icons/site-icons_Teaching.svg');
+    background-image: url('../icons/site-icons_Teaching.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -112,7 +116,7 @@ a {
     height: 1.25em;
     width: 1.25em;
 
-    background-image: url('icons/site-icons_Location.svg');
+    background-image: url('../icons/site-icons_Location.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -130,7 +134,7 @@ a {
     height: 1.25em;
     width: 1.25em;
 
-    background-image: url('icons/site-icons_University.svg');
+    background-image: url('../icons/site-icons_University.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -148,7 +152,7 @@ a {
     height: 1.25em;
     width: 1.25em;
 
-    background-image: url('icons/site-icons_Location.svg');
+    background-image: url('../icons/site-icons_Location.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -166,7 +170,7 @@ a {
     height: 1.25em;
     width: 1.25em;
 
-    background-image: url('icons/site-icons_Email.svg');
+    background-image: url('../icons/site-icons_Email.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -184,7 +188,7 @@ a {
     height: 1.25em;
     width: 1.25em;
 
-    background-image: url('icons/site-icons_Social.svg');
+    background-image: url('../icons/site-icons_Social.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
