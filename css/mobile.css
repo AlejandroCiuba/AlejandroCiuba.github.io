@@ -1,0 +1,102 @@
+/* Header Panel */
+#header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #0D0C1D;
+    z-index: 2;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    gap: 0vh;
+}
+
+#name {
+    flex-grow: 2;
+    display: flex;
+    float: left;
+}
+
+#name h1 {
+    margin-left: 2vw;
+    font-size: 1.5em;
+}
+
+#links {
+    flex-grow: 8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#links ul {
+    margin: 0 0 1vh 0;
+}
+
+#links li {
+    font-size: 1.15em;
+    padding: 0 2vw 0 2vw;
+    float: left;
+}
+
+/* Content */
+#content {
+    margin: 5vh 7vw 5vh 7vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 4vw;
+    animation: fadein 0.75s;
+
+}
+
+.section {
+    display: flex;
+    flex-flow: column;
+    font-size: large;
+    flex-grow: 1;
+}
+
+.information {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+}
+
+/* Custom Information Divs */
+#about_me h2 {
+    margin-top: 0;
+}
+
+#major_updates li {
+    margin-bottom: 1em;
+}
+
+.pub_year li {
+    margin-bottom: 1em;
+}
+
+#photo img {
+    width: 100%;
+    height: auto;
+}
+
+#cv object {
+    height: auto;
+}
+
+/* Footer */
+#footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #0D0C1D;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-end;
+}
+
+#copyrights {
+    padding: 0 2vw 0 2vw;
+}

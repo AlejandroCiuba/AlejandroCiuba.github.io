@@ -1,0 +1,114 @@
+/* Header Panel */
+#header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #0D0C1D;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    gap: 4vw;
+}
+
+#name h1 {
+    margin-left: 2vw;
+}
+
+#links {
+    flex-grow: 8;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#links li {
+    font-size: 1.5em;
+    padding: 0 2vw 0 2vw;
+    float: right;
+}
+
+#name {
+    flex-grow: 2;
+    display: flex;
+    float: left;
+}
+
+/* Content */
+#content {
+    margin: 5vh 7vw 5vh 7vw;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 4vw;
+    animation: fadein 0.75s;
+
+}
+
+.section {
+    display: flex;
+    flex-flow: column;
+    font-size: large;
+    flex-grow: 1;
+}
+
+.information {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+}
+
+/* Custom Information Divs */
+#about_me h2 {
+    margin-top: 0;
+}
+
+#cv {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#cv p {
+    margin-top: 0;
+}
+
+#cv a {
+    text-decoration: underline;
+}
+
+.pub_year li {
+    padding-bottom: 1em;
+}
+
+.pub_year a {
+    text-decoration: underline;
+}
+
+.personal_project > div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3vw;
+}
+
+.personal_project div p:first-child{
+    margin-top: 0;
+}
+
+/* Footer */
+#footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #0D0C1D;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-end;
+}
+
+#copyrights {
+    padding: 0 2vw 0 2vw;
+}
