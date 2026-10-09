@@ -62,7 +62,7 @@ section {
 .information {
     display: flex;
     flex-flow: column;
-    flex-grow: 1;
+    flex-grow: 0;
 }
 
 /* Custom Information Divs */
