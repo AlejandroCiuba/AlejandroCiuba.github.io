@@ -15,21 +15,30 @@ header {
 }
 
 nav {
-    flex-grow: 8;
-    float: right;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-nav li {
+nav li a {
+    /* flex: 1; */
     font-size: 1.5em;
     padding: 0 2vw 0 2vw;
-    float: right;
+    transition: font-size 0.25s;
+}
+
+nav li a:hover {
+    font-size: 1.6em;
 }
 
 #name {
-    flex-grow: 2;
     display: flex;
     float: left;
 }
