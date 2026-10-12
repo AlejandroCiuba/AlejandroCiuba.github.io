@@ -91,13 +91,18 @@ section {
     text-decoration: underline;
 }
 
-.personal_project > div{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 3vw;
+#personal_work > div {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-content: space-around; 
 }
 
-.personal_project div p:first-child{
-    margin-top: 0;
+.personal_entry iframe {
+    transition: scale 0.25s;
 }
+
+.personal_entry iframe:hover {
+    scale: 125%;
+}
+
