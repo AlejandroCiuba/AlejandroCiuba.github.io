@@ -10,12 +10,16 @@ header {
     gap: 4vw;
 }
 
-#name h1 {
+#name {
+    display: flex;
+    float: left;
+}
+
+#name h1 a {
     margin-left: 2vw;
 }
 
 nav {
-    flex: 1;
     display: flex;
     align-items: center;
 }
@@ -28,51 +32,39 @@ nav ul {
 }
 
 nav li a {
-    /* flex: 1; */
-    font-size: 1.5em;
+    font-size: 150%;
     padding: 0 2vw 0 2vw;
     transition: font-size 0.25s;
 }
 
 nav li a:hover {
-    font-size: 1.6em;
+    font-size: 175%;
+    text-decoration: none;
 }
 
-#name {
-    display: flex;
-    float: left;
-}
 
 /* Content */
 main {
     margin: 5vh 7vw 5vh 7vw;
     display: flex;
     justify-content: center;
-    flex-grow: 1;
     gap: 4vw;
     animation: fadein 0.75s;
-
 }
 
 article {
     display: flex;
     flex-flow: column;
     font-size: large;
-    flex-grow: 1;
 }
 
 section {
     display: flex;
     flex-flow: column;
     font-size: large;
-    flex-grow: 1;
-}
-
-.information {
-    display: flex;
-    flex-flow: column;
     flex-grow: 0;
 }
+
 
 /* Custom Information Divs */
 #cv {
