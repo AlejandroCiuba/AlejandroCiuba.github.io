@@ -21,16 +21,22 @@ async function loadGamePage() {
 
 function loadGameText(json) {
     
-    let textNode = document.createTextNode(json["TEXT"]);
-    document.getElementById("text").appendChild(textNode);
+    if ("TEXT" in json) {
+        let textNode = document.createTextNode(json["TEXT"]);
+        document.getElementById("text").appendChild(textNode);
+    }
     
-    let repoNode = document.createElement("a")
-    repoNode.setAttribute("href", json["REPO"]);
-    repoNode.innerText = "GitHub Repository Link"
-    document.getElementById("githublink").appendChild(repoNode);
+    if ("REPO" in json) {
+        let repoNode = document.createElement("a")
+        repoNode.setAttribute("href", json["REPO"]);
+        repoNode.innerText = "GitHub Repository Link"
+        document.getElementById("githublink").appendChild(repoNode);
+    }
 
-    let headerNode = document.getElementById("title");
-    headerNode.innerText = json["TITLE"];
+    if ("TITLE" in json) {
+        let headerNode = document.getElementById("title");
+        headerNode.innerText = json["TITLE"];
+    }
     
 }
 
