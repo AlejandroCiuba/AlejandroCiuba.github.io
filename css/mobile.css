@@ -46,17 +46,16 @@ main {
     flex-flow: column;
     justify-content: center;
     flex-grow: 1;
-    gap: 4vw;
     animation: fadein 0.75s;
 
 }
 
-article {
+/* article {
     display: flex;
     flex-flow: column;
     font-size: large;
     flex-grow: 1;
-}
+} */
 
 section {
     display: flex;
