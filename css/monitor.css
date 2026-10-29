@@ -45,7 +45,7 @@ nav li a:hover {
 
 /* Content */
 main {
-    margin: 5vh 7vw 5vh 7vw;
+    /* margin: 5vh 7vw 5vh 7vw; */
     display: flex;
     justify-content: center;
     animation: fadein 0.75s;
