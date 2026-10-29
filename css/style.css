@@ -85,8 +85,12 @@ section {
 article {
     margin-bottom: 1em;
     background-color: #0D0C1D;
-    border-radius: 1em;
+    border-radius: 0.25em;
     padding: 1em;
+}
+
+article:last-child {
+    margin-bottom: 0;
 }
 
 #major_updates a {
