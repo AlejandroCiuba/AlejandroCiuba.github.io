@@ -98,11 +98,11 @@ section {
     align-content: space-around; 
 }
 
-.personal_entry iframe {
+.personal_entry img {
     transition: scale 0.25s;
 }
 
-.personal_entry iframe:hover {
+.personal_entry img:hover {
     scale: 125%;
 }
 
