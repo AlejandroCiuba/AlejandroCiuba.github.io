@@ -28,11 +28,11 @@
 </header>
 <body>
     <main>
-        <section class="author_information">
-            <picture>
-                <img src="images/alejandro-ciuba.png" alt="Alejandro Ciuba" width="350vw" height="350vh" style="border-radius: 50%;">
-            </picture>
-            <section class="information">
+        <section>
+            <article>
+                <picture>
+                    <img src="images/alejandro-ciuba.png" alt="Alejandro Ciuba" width="350vw" height="350vh" style="border-radius: 50%;">
+                </picture>
                 <div id="name_information">
                     <ul>
                         <li>Alejandro Ciuba</li>
@@ -40,8 +40,6 @@
                         <li>STIW Lab at the University of Pittsburgh</li>
                     </ul>
                 </div>
-            </section>
-            <section class="information">
                 <div id="contact_information">
                     <ul>
                         <li class="address">135 N. Bellefield Ave.</li>
@@ -51,9 +49,19 @@
                         <li class="social"><a href="https://www.linkedin.com/in/alejandro-ciuba/">LinkedIn</a></li>
                     </ul>
                 </div>
-            </section>
+            </article>
+            <article id="personal_work" style="flex-grow: 1;">
+                <h2>Recent Projects</h2>
+                <div>
+                    <div class="personal_entry">
+                        <a href="projects/play-game.html?game=colorpicker">
+                            <img src="images/color.png" alt="Thumbnail for the Enhanced Color Picker Experience" width="128vw" height="128vh" style="border-radius: 10%;">
+                        </a>
+                    </div>
+                </div>
+            </article>
         </section>
-        <section class="information">
+        <section>
             <article id="about_me">
                 <h2>About Me</h2>
                 <p>I am a fourth year PhD student in computer science at the University of Pittsburgh researching game design with NLP through community participation. I am advised by Dr. Aakash Gautam and co-advised by Dr. Xiang (Lorraine) Li.</p>
