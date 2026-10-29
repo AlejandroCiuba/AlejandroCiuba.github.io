@@ -60,8 +60,26 @@ a:hover {
 
 /* Across media */
 
-#about_me h2 {
+h2 {
+    margin: 0 0 0.5em 0;
+}
+
+h3, h4 {
+    margin: 0;
+}
+
+h2~*:not(:last-child) {
     margin-top: 0;
+    margin-bottom: 1em;
+}
+
+h2~*:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+article {
+    margin-bottom: 1em;
 }
 
 #major_updates a {
@@ -71,6 +89,7 @@ a:hover {
 #research_products a {
     text-decoration: underline;
 }
+
 
 /* Footer */
 footer {
