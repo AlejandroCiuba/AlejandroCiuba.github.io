@@ -48,13 +48,10 @@ main {
     margin: 5vh 7vw 5vh 7vw;
     display: flex;
     justify-content: center;
-    gap: 4vw;
     animation: fadein 0.75s;
 }
 
 article {
-    display: flex;
-    flex-flow: column;
     font-size: large;
 }
 
@@ -62,7 +59,7 @@ section {
     display: flex;
     flex-flow: column;
     font-size: large;
-    flex-grow: 0;
+    flex-grow: 1;
 }
 
 
