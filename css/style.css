@@ -7,6 +7,7 @@
 /* Custom Bullet Points */
 @import url(bullet-points.css);
 
+
 /* IMPORTED GOOGLE FONTS */
 .roboto-website {
     font-family: "Roboto", sans-serif;
@@ -18,7 +19,11 @@
 
 /* Global Variables */
 :root {
-    --text-color: #f7f4f4;
+    --text-color: black;
+    --background: rgba(255, 255, 255, 0.89);
+    --ends: black;
+    --ends-color: white;
+    --articles: rgb(241, 241, 241);
 }
 
 /* Body & Other Settings*/
@@ -27,10 +32,25 @@ body, html {
     height: 100%;
     width: 100%;
     margin: auto;
-    background-color: #161B33;
+    background-color: var(--background);
     color: var(--text-color);
     display: flex;
     flex-flow: column;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--ends);
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    gap: 4vw;
+}
+
+header a {
+    color: var(--ends-color);
 }
 
 ul {
@@ -84,7 +104,7 @@ section {
 
 article {
     margin-bottom: 1em;
-    background-color: #0D0C1D;
+    background-color: var(--articles);
     border-radius: 0.25em;
     padding: 1em;
 }
@@ -106,7 +126,8 @@ article:last-child {
 footer {
     bottom: 0;
     width: 100%;
-    background-color: #0D0C1D;
+    color: var(--ends-color);
+    background-color: var(--ends);
     z-index: 2;
     display: flex;
     justify-content: flex-start;
