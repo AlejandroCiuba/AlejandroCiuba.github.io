@@ -20,10 +20,10 @@
 /* Global Variables */
 :root {
     --text-color: black;
-    --background: rgba(255, 255, 255, 0.89);
-    --ends: black;
+    --background: rgba(255, 255, 255, 0.712);
+    --ends: #0A100D;
     --ends-color: white;
-    --articles: rgb(241, 241, 241);
+    --articles: #D6D5C9;
 }
 
 /* Body & Other Settings*/
