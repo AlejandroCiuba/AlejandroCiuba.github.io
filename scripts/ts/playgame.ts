@@ -8,7 +8,7 @@ async function loadGamePage() {
 
     console.log(game);
 
-    const json = await fetch(`../files/${game}.json`)
+    const json = await fetch(`../../files/${game}.json`)
         .then(response => response.json())
         .catch(error => {
             console.error(`Information on this game cannot be retrieved due to ${error}`);

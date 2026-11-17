@@ -14,7 +14,7 @@ function loadGamePage() {
         let url = new URL(document.URL);
         const game = url.searchParams.get("game");
         console.log(game);
-        const json = yield fetch(`../files/${game}.json`)
+        const json = yield fetch(`../../files/${game}.json`)
             .then(response => response.json())
             .catch(error => {
             console.error(`Information on this game cannot be retrieved due to ${error}`);
@@ -62,4 +62,4 @@ function loadGameEmbed(json) {
     }
     (_a = document.getElementById("game")) === null || _a === void 0 ? void 0 : _a.appendChild(iframeNode);
 }
-//# sourceMappingURL=script.js.map
+//# sourceMappingURL=playgame.js.map
