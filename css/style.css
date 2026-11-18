@@ -1,8 +1,8 @@
 /* Smartphone */
-@import url(mobile.css) (max-width: 800px);
+@import url(mobile.css) (max-width: 1000px);
 
 /* Monitor */
-@import url(monitor.css) (min-width: 801px);
+@import url(monitor.css) (min-width: 1001px);
 
 /* Custom Bullet Points */
 @import url(bullet-points.css);
@@ -46,7 +46,6 @@ header {
     z-index: 2;
     display: flex;
     justify-content: flex-start;
-    gap: 4vw;
 }
 
 header a {

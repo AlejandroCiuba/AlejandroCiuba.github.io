@@ -34,7 +34,7 @@ nav li {
 
 /* Content */
 main {
-    margin: 5vh 7vw 5vh 7vw;
+    margin: 1vh 12vw;
     display: flex;
     flex-flow: column;
     justify-content: center;

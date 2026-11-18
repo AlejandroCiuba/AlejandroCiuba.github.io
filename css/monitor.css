@@ -1,4 +1,9 @@
 /* Header Panel */
+
+header {
+    gap: 4vw;
+}
+
 #name {
     display: flex;
     float: left;
@@ -34,7 +39,7 @@ nav li a:hover {
 
 /* Content */
 main {
-    /* margin: 5vh 7vw 5vh 7vw; */
+    margin: 1vh 12vw;
     display: flex;
     justify-content: center;
     animation: fadein 0.75s;
