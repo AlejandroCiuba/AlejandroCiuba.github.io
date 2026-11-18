@@ -1,6 +1,3 @@
-
-loadGamePage()
-
 async function loadGamePage() {
 
     let url = new URL(document.URL);
@@ -17,7 +14,7 @@ async function loadGamePage() {
 
     console.log(json);
 
-    if (json === null) {
+    if (json === undefined) {
         return;
     }
 
@@ -69,3 +66,6 @@ function loadGameEmbed(json: any) {
     
     document.getElementById("game")?.appendChild(iframeNode);
 }
+
+
+loadGamePage()

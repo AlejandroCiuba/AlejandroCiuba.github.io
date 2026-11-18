@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-loadGamePage();
 function loadGamePage() {
     return __awaiter(this, void 0, void 0, function* () {
         let url = new URL(document.URL);
@@ -20,7 +19,7 @@ function loadGamePage() {
             console.error(`Information on this game cannot be retrieved due to ${error}`);
         });
         console.log(json);
-        if (json === null) {
+        if (json === undefined) {
             return;
         }
         loadGameEmbed(json);
@@ -62,4 +61,5 @@ function loadGameEmbed(json) {
     }
     (_a = document.getElementById("game")) === null || _a === void 0 ? void 0 : _a.appendChild(iframeNode);
 }
+loadGamePage();
 //# sourceMappingURL=playgame.js.map
