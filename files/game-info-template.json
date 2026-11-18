@@ -2,5 +2,6 @@
     "LINK": "this is the link",
     "TITLE": "Game's Title",
     "TEXT": "This is the text for the game",
-    "REPO": "Link to the repository"
+    "REPO": "Link to the repository",
+    "IMAGE": "../images/"
 }
