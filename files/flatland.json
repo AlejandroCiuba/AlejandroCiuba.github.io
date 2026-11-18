@@ -1,0 +1,8 @@
+{
+    "LINK": "https://youtube.com/embed/enmmMr1R3QI?si=kq9CJqcW6U_WoqA-",
+    "TITLE": "Flatland: The Game",
+    "TEXT": "My first game and winner of the CSC 2020 Hackathon (as well as Best Beginner Project). GitHub contains the executable to play the game.",
+    "REPO": "https://github.com/AlejandroCiuba/Flatland-The-Game",
+    "IMAGE": "../images/flatland.png",
+    "IFRAME": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/enmmMr1R3QI?si=FslIplEA9ViJKC8I\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+}
