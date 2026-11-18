@@ -1,4 +1,4 @@
-import PortfolioDiv from "./portfolio-div.js";
+import PortfolioItem from "./portfolio-item.js";
 
 async function create_portfolio(items: string[]) {
 
@@ -12,7 +12,7 @@ async function create_portfolio(items: string[]) {
         const fp: string = path + item + ".json";
         console.debug(fp);
 
-        const div: PortfolioDiv | undefined = await PortfolioDiv.from_file(fp, item === "commander"? "230vw": "128vw");
+        const div: PortfolioItem | undefined = await PortfolioItem.from_file(fp, item === "commander"? "230vw": "128vw");
 
         if (div === undefined) {
             console.error(`Could not generate ${item} PortfolioDiv`);

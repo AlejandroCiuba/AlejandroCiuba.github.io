@@ -7,7 +7,7 @@ interface ProjectJSON {
 }
 
 
-export default class PortfolioDiv {
+export default class PortfolioItem {
 
     ref: string = "";
     name: string = "";
@@ -38,7 +38,7 @@ export default class PortfolioDiv {
         this.height = height;
     }
 
-    static async from_file(file: string, width: string = "128vw", height: string = "128vh"): Promise<PortfolioDiv | undefined> {
+    static async from_file(file: string, width: string = "128vw", height: string = "128vh"): Promise<PortfolioItem | undefined> {
         
         const json = await fetch(file)
             .then(response => response.json())
@@ -51,7 +51,7 @@ export default class PortfolioDiv {
             return undefined;
         }
 
-        return new PortfolioDiv(json, file.substring(file.lastIndexOf("/") + 1, file.lastIndexOf(".")), width, height);
+        return new PortfolioItem(json, file.substring(file.lastIndexOf("/") + 1, file.lastIndexOf(".")), width, height);
     }
 
     async create_div(): Promise<HTMLDivElement> {

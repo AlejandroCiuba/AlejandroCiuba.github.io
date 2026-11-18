@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import PortfolioDiv from "./portfolio-div.js";
+import PortfolioItem from "./portfolio-item.js";
 function create_portfolio(items) {
     return __awaiter(this, void 0, void 0, function* () {
         const path = "../../files/";
@@ -16,7 +16,7 @@ function create_portfolio(items) {
         const load_widget = (item) => __awaiter(this, void 0, void 0, function* () {
             const fp = path + item + ".json";
             console.debug(fp);
-            const div = yield PortfolioDiv.from_file(fp, item === "commander" ? "230vw" : "128vw");
+            const div = yield PortfolioItem.from_file(fp, item === "commander" ? "230vw" : "128vw");
             if (div === undefined) {
                 console.error(`Could not generate ${item} PortfolioDiv`);
                 return document.createElement("div");

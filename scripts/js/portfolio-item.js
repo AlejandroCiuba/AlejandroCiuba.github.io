@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export default class PortfolioDiv {
+export default class PortfolioItem {
     constructor(json, ref, width = "128vw", height = "128vh") {
         this.ref = "";
         this.name = "";
@@ -40,7 +40,7 @@ export default class PortfolioDiv {
             if (json === undefined) {
                 return undefined;
             }
-            return new PortfolioDiv(json, file.substring(file.lastIndexOf("/") + 1, file.lastIndexOf(".")), width, height);
+            return new PortfolioItem(json, file.substring(file.lastIndexOf("/") + 1, file.lastIndexOf(".")), width, height);
         });
     }
     create_div() {
@@ -60,4 +60,4 @@ export default class PortfolioDiv {
         });
     }
 }
-//# sourceMappingURL=portfolio-div.js.map
+//# sourceMappingURL=portfolio-item.js.map
