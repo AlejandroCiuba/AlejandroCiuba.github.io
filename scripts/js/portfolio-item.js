@@ -9,12 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 export default class PortfolioItem {
     constructor(json, ref, width = "128vw", height = "128vh") {
+        var _a, _b, _c, _d;
         this.ref = "";
         this.name = "";
         this.description = "";
         this.link = "";
         this.repository = "";
         this.image = "";
+        this.iframe = "";
         this.height = "";
         this.width = "";
         if (ref === undefined || ref === "") {
@@ -23,10 +25,11 @@ export default class PortfolioItem {
         }
         this.ref = ref;
         this.name = json.TITLE;
-        this.description = json.TEXT;
-        this.link = json.LINK;
-        this.repository = json.REPO;
+        this.description = (_a = json.TEXT) !== null && _a !== void 0 ? _a : "";
+        this.link = (_b = json.LINK) !== null && _b !== void 0 ? _b : "";
+        this.repository = (_c = json.REPO) !== null && _c !== void 0 ? _c : "";
         this.image = json.IMAGE;
+        this.iframe = (_d = json.IFRAME) !== null && _d !== void 0 ? _d : "";
         this.width = width;
         this.height = height;
     }
@@ -45,11 +48,11 @@ export default class PortfolioItem {
     }
     create_div() {
         return __awaiter(this, void 0, void 0, function* () {
-            let div = document.createElement("div");
+            const div = document.createElement("div");
             div.setAttribute("class", "personal_entry");
-            let a = document.createElement("a");
+            const a = document.createElement("a");
             a.setAttribute("href", `play-game.html?game=${this.ref}`);
-            let img = document.createElement("img");
+            const img = document.createElement("img");
             img.setAttribute("src", this.image);
             img.setAttribute("width", this.width);
             img.setAttribute("height", this.height);
@@ -57,6 +60,27 @@ export default class PortfolioItem {
             div.appendChild(a);
             a.appendChild(img);
             return div;
+        });
+    }
+    create_iframe() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.iframe !== "") {
+                const div = document.createElement("div");
+                div.innerHTML = this.iframe;
+                return div.firstChild;
+            }
+            const iframe = document.createElement("iframe");
+            const attrs = {
+                src: this.link,
+                width: "1152",
+                height: "692",
+                allowfullscreen: "",
+                frameborder: "0",
+            };
+            for (const attr in attrs) {
+                iframe.setAttribute(attr, attrs[attr]);
+            }
+            return iframe;
         });
     }
 }

@@ -1,9 +1,10 @@
 interface ProjectJSON {
-    LINK: string,
+    LINK?: string,
     TITLE: string,
-    TEXT: string,
-    REPO: string,
+    TEXT?: string,
+    REPO?: string,
     IMAGE: string,
+    IFRAME?: string,
 }
 
 
@@ -17,6 +18,7 @@ export default class PortfolioItem {
     repository: string = "";
 
     image: string = "";
+    iframe: string = "";
 
     height: string = "";
     width: string = "";
@@ -30,10 +32,11 @@ export default class PortfolioItem {
 
         this.ref = ref;
         this.name = json.TITLE;
-        this.description = json.TEXT;
-        this.link = json.LINK;
-        this.repository = json.REPO;
+        this.description = json.TEXT ?? "";
+        this.link = json.LINK ?? "";
+        this.repository = json.REPO ?? "";
         this.image = json.IMAGE;
+        this.iframe = json.IFRAME ?? "";
         this.width = width;
         this.height = height;
     }
@@ -56,13 +59,13 @@ export default class PortfolioItem {
 
     async create_div(): Promise<HTMLDivElement> {
 
-        let div = document.createElement("div");
+        const div = document.createElement("div");
         div.setAttribute("class", "personal_entry");
         
-        let a = document.createElement("a");
+        const a = document.createElement("a");
         a.setAttribute("href", `play-game.html?game=${this.ref}`);
         
-        let img = document.createElement("img");
+        const img = document.createElement("img");
         img.setAttribute("src", this.image);
         img.setAttribute("width", this.width);
         img.setAttribute("height", this.height);
@@ -72,5 +75,31 @@ export default class PortfolioItem {
         a.appendChild(img);
 
         return div;
+    }
+
+
+    async create_iframe(): Promise<HTMLIFrameElement> {
+
+        if (this.iframe !== "") {
+            const div: HTMLDivElement = document.createElement("div");
+            div.innerHTML = this.iframe;
+            return div.firstChild as HTMLIFrameElement;
+        }
+
+        const iframe: HTMLIFrameElement = document.createElement("iframe");
+        const attrs = {
+            src: this.link,
+            width: "1152",
+            height: "692",
+            allowfullscreen: "",
+            frameborder: "0",
+        }
+
+        for (const attr in attrs) {
+            iframe.setAttribute(attr, attrs[attr as keyof typeof attrs]);
+        }
+
+        return iframe;
+
     }
 }

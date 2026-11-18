@@ -18,8 +18,8 @@ function loadGamePage() {
             console.error(`Failed to load ${game} data`);
             return;
         }
-        loadGameEmbed(item);
         loadGameText(item);
+        yield loadGameEmbed(item);
     });
 }
 function loadGameText(item) {
@@ -36,20 +36,10 @@ function loadGameText(item) {
     }
 }
 function loadGameEmbed(item) {
-    var _a;
-    const json_link = (typeof item.link === 'string') ? item.link : "";
-    const attrs = {
-        src: json_link,
-        width: "1152",
-        height: "692",
-        allowfullscreen: "",
-        frameborder: "0",
-    };
-    const iframeNode = document.createElement("iframe");
-    for (const attr in attrs) {
-        iframeNode.setAttribute(attr, attrs[attr]);
-    }
-    (_a = document.getElementById("game")) === null || _a === void 0 ? void 0 : _a.appendChild(iframeNode);
+    return __awaiter(this, void 0, void 0, function* () {
+        var _a;
+        (_a = document.getElementById("game")) === null || _a === void 0 ? void 0 : _a.appendChild(yield item.create_iframe());
+    });
 }
 loadGamePage();
 //# sourceMappingURL=playgame.js.map

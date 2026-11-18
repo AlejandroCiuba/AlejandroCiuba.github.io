@@ -31,5 +31,5 @@ function create_portfolio(items) {
         });
     });
 }
-create_portfolio(["colorpicker", "commander", "paradise", "salvador", "terminal"]);
+create_portfolio(["colorpicker", "commander", "paradise", "salvador", "terminal", "flatland"]);
 //# sourceMappingURL=portfolio.js.map

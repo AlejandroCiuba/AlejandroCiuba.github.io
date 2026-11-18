@@ -15,8 +15,8 @@ async function loadGamePage() {
         return;
     }
 
-    loadGameEmbed(item);
     loadGameText(item);
+    await loadGameEmbed(item);
     
 }
 
@@ -36,26 +36,8 @@ function loadGameText(item: PortfolioItem) {
     }
 }
 
-function loadGameEmbed(item: PortfolioItem) {
-
-    const json_link: string = (typeof item.link === 'string')? item.link : "";
-    
-    const attrs = {
-        src: json_link,
-        width: "1152",
-        height: "692",
-        allowfullscreen: "",
-        frameborder: "0",
-    }
-    
-    const iframeNode = document.createElement("iframe");
-    
-    for (const attr in attrs) {
-        iframeNode.setAttribute(attr, attrs[attr as keyof typeof attrs]);
-    }
-    
-    document.getElementById("game")?.appendChild(iframeNode);
+async function loadGameEmbed(item: PortfolioItem) {
+    document.getElementById("game")?.appendChild(await item.create_iframe());
 }
-
 
 loadGamePage()
