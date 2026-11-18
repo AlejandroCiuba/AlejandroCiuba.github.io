@@ -1,54 +1,44 @@
+import PortfolioItem from "./portfolio-item.js";
+
 async function loadGamePage() {
 
     let url = new URL(document.URL);
     const game = url.searchParams.get("game");
 
-    console.log(game);
+    console.debug(game);
 
-    const json = await fetch(`../../files/${game}.json`)
-        .then(response => response.json())
-        .catch(error => {
-            console.error(`Information on this game cannot be retrieved due to ${error}`);
-        }
-    );
+    const item: PortfolioItem | undefined = await PortfolioItem.from_file(`../../files/${game}.json`);
 
-    console.log(json);
-
-    if (json === undefined) {
+    
+    if (item === undefined) {
+        console.error(`Failed to load ${game} data`);
         return;
     }
 
-    loadGameEmbed(json);
-    loadGameText(json);
+    loadGameEmbed(item);
+    loadGameText(item);
     
 }
 
-function loadGameText(json: any) {
-    
-    if ("TEXT" in json) {
-        let textNode = document.createTextNode(json["TEXT"]);
-        document.getElementById("text")?.appendChild(textNode);
-    }
-    
-    if ("REPO" in json) {
-        let repoNode = document.createElement("a")
-        repoNode.setAttribute("href", json["REPO"]);
-        repoNode.innerText = "GitHub Repository Link"
-        document.getElementById("githublink")?.appendChild(repoNode);
-    }
+function loadGameText(item: PortfolioItem) {
 
-    if ("TITLE" in json) {
-        let headerNode = document.getElementById("title");
-        if (headerNode !== null) {
-            headerNode.innerText = json["TITLE"];
-        }
+    const textNode = document.createTextNode(item.description);
+    document.getElementById("text")?.appendChild(textNode);
+
+    const repoNode = document.createElement("a");
+    repoNode.innerText = "GitHub Repository Link"
+    repoNode.setAttribute("href", item.repository);
+    document.getElementById("githublink")?.appendChild(repoNode);
+
+    const headerNode = document.getElementById("title");
+    if (headerNode !== null) {
+        headerNode.innerText = item.name;
     }
-    
 }
 
-function loadGameEmbed(json: any) {
+function loadGameEmbed(item: PortfolioItem) {
 
-    let json_link: string = (typeof json["LINK"] === 'string')? json["LINK"] : "";
+    const json_link: string = (typeof item.link === 'string')? item.link : "";
     
     const attrs = {
         src: json_link,
@@ -58,7 +48,7 @@ function loadGameEmbed(json: any) {
         frameborder: "0",
     }
     
-    let iframeNode = document.createElement("iframe");
+    const iframeNode = document.createElement("iframe");
     
     for (const attr in attrs) {
         iframeNode.setAttribute(attr, attrs[attr as keyof typeof attrs]);

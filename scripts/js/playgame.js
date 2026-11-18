@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,46 +7,37 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import PortfolioItem from "./portfolio-item.js";
 function loadGamePage() {
     return __awaiter(this, void 0, void 0, function* () {
         let url = new URL(document.URL);
         const game = url.searchParams.get("game");
-        console.log(game);
-        const json = yield fetch(`../../files/${game}.json`)
-            .then(response => response.json())
-            .catch(error => {
-            console.error(`Information on this game cannot be retrieved due to ${error}`);
-        });
-        console.log(json);
-        if (json === undefined) {
+        console.debug(game);
+        const item = yield PortfolioItem.from_file(`../../files/${game}.json`);
+        if (item === undefined) {
+            console.error(`Failed to load ${game} data`);
             return;
         }
-        loadGameEmbed(json);
-        loadGameText(json);
+        loadGameEmbed(item);
+        loadGameText(item);
     });
 }
-function loadGameText(json) {
+function loadGameText(item) {
     var _a, _b;
-    if ("TEXT" in json) {
-        let textNode = document.createTextNode(json["TEXT"]);
-        (_a = document.getElementById("text")) === null || _a === void 0 ? void 0 : _a.appendChild(textNode);
-    }
-    if ("REPO" in json) {
-        let repoNode = document.createElement("a");
-        repoNode.setAttribute("href", json["REPO"]);
-        repoNode.innerText = "GitHub Repository Link";
-        (_b = document.getElementById("githublink")) === null || _b === void 0 ? void 0 : _b.appendChild(repoNode);
-    }
-    if ("TITLE" in json) {
-        let headerNode = document.getElementById("title");
-        if (headerNode !== null) {
-            headerNode.innerText = json["TITLE"];
-        }
+    const textNode = document.createTextNode(item.description);
+    (_a = document.getElementById("text")) === null || _a === void 0 ? void 0 : _a.appendChild(textNode);
+    const repoNode = document.createElement("a");
+    repoNode.innerText = "GitHub Repository Link";
+    repoNode.setAttribute("href", item.repository);
+    (_b = document.getElementById("githublink")) === null || _b === void 0 ? void 0 : _b.appendChild(repoNode);
+    const headerNode = document.getElementById("title");
+    if (headerNode !== null) {
+        headerNode.innerText = item.name;
     }
 }
-function loadGameEmbed(json) {
+function loadGameEmbed(item) {
     var _a;
-    let json_link = (typeof json["LINK"] === 'string') ? json["LINK"] : "";
+    const json_link = (typeof item.link === 'string') ? item.link : "";
     const attrs = {
         src: json_link,
         width: "1152",
@@ -55,7 +45,7 @@ function loadGameEmbed(json) {
         allowfullscreen: "",
         frameborder: "0",
     };
-    let iframeNode = document.createElement("iframe");
+    const iframeNode = document.createElement("iframe");
     for (const attr in attrs) {
         iframeNode.setAttribute(attr, attrs[attr]);
     }
