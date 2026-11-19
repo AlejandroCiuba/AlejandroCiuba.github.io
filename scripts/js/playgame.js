@@ -7,16 +7,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import * as Dirs from "./dirs.js";
 import PortfolioItem from "./portfolio-item.js";
 function loadGamePage() {
     return __awaiter(this, void 0, void 0, function* () {
         let url = new URL(document.URL);
         const game = url.searchParams.get("game");
         console.debug(game);
-        const item = yield PortfolioItem.from_file(`../../files/${game}.json`);
+        const item = yield PortfolioItem.from_file(`${Dirs.GAMEDATA}/${game}.json`);
         if (item === undefined) {
             console.error(`Failed to load ${game} data`);
             return;
+        }
+        if (item.name === "Commander") {
+            item.link = `${Dirs.PROJECTS}/${item.link}`;
+            console.debug(item);
         }
         loadGameText(item);
         yield loadGameEmbed(item);
