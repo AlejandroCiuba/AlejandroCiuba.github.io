@@ -1,15 +1,15 @@
+import * as Dirs from "./dirs.js";
 import PortfolioItem from "./portfolio-item.js";
 
 async function create_portfolio(items: string[]) {
 
-    const path: string = "../../files/";
     const start: HTMLElement = document.querySelector("#personal_work > div")!;
 
     console.debug(start);
 
     const load_widget = async (item: string): Promise<HTMLElement> => {
 
-        const fp: string = path + item + ".json";
+        const fp: string = `${Dirs.GAMEDATA}/${item}.json`;
         console.debug(fp);
 
         const div: PortfolioItem | undefined = await PortfolioItem.from_file(fp, item === "commander"? "230vw": "128vw");
@@ -18,6 +18,8 @@ async function create_portfolio(items: string[]) {
             console.error(`Could not generate ${item} PortfolioDiv`);
             return document.createElement("div");
         }
+
+        div.image = `${Dirs.IMAGES}/${div.image}`;
 
         const ele = await div.create_div();
 

@@ -1,3 +1,4 @@
+import * as Dirs from "./dirs.js";
 import PortfolioItem from "./portfolio-item.js";
 
 async function loadGamePage() {
@@ -7,12 +8,17 @@ async function loadGamePage() {
 
     console.debug(game);
 
-    const item: PortfolioItem | undefined = await PortfolioItem.from_file(`../../files/${game}.json`);
+    const item: PortfolioItem | undefined = await PortfolioItem.from_file(`${Dirs.GAMEDATA}/${game}.json`);
 
     
     if (item === undefined) {
         console.error(`Failed to load ${game} data`);
         return;
+    }
+
+    if (item.name === "Commander") {
+        item.link = `${Dirs.PROJECTS}/${item.link}`;
+        console.debug(item);
     }
 
     loadGameText(item);
