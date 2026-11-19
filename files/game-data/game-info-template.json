@@ -3,6 +3,6 @@
     "TITLE": "Game's Title",
     "TEXT": "This is the text for the game",
     "REPO": "Link to the repository",
-    "IMAGE": "../images/",
+    "IMAGE": "images/",
     "IFRAME": ""
 }
