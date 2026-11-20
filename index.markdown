@@ -1,6 +1,48 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
 ---
+
+
+<section>
+    <article>
+        {% include_relative index/information-section.md %}
+    </article>
+</section>
+
+<section>
+    <article id="about_me">
+        <h2>About Me</h2>
+        <p>I am a fourth year PhD student in computer science at the University of Pittsburgh researching game design with NLP through community participation. I am advised by Dr. Aakash Gautam and co-advised by Dr. Xiang (Lorraine) Li.</p>
+        <p>I received my B.S. in computer science at the University of Pittsburgh in 2023. During this time, I did educational NLP research with Dr. Diane Litman and developed a speaker segmentation pipeline for the APLS project under Dr. Dan Villarreal.</p>
+    </article>
+    
+    <article id="research_interests">
+        <h2>Research Interests</h2>
+        <p>My research focus examines how games with NLP components can be developed through community-focused design practices (e.g., participatory design) for participant benefit.</p>
+        <p>The big questions of my research are:</p>
+        <ol>
+            <li>How do NLP technologies affect game design and the outcome of game-based interventions?</li>
+            <li>How can games with NLP components be designed for and with community participants using community-focused design frameworks?</li>
+            <li>What tensions exist when developing game-based interventions with NLP components?</li>
+            <li>How can serious games with NLP components meaningfully affect participant communities in ways unavailable to games without NLP involvement?</li>
+            <li>How can NLP data collection be reformed to encourage community participation over pure data extraction?</li>
+        </ol>
+    </article>
+
+    <article id="major_updates">
+        <h2>Major Updates</h2>
+        <h3>2026</h3>
+        <ul>
+            <li class="academic">I just finished another successful year of being the NOUR mentor. I am extremely proud of all the students, who all spent the summer growing as researcher and completing a wide array of projects!</li>
+            <li class="publication">My research with YY Li and Dr. Aakash Gautam, <a href="https://arxiv.org/abs/2604.00282"><i>Not Just Duolingo: Supporting Immigrant Language Preservation Through Family-Based Play</i></a>, has just been accepted as a CHI2026 short paper.</li>
+        </ul>
+        <h3>2025</h3>
+        <ul>
+            <li class="academic">I have just been accepted into the <a href="https://cra.org/ur2phd/">UR2PhD</a> workshop series by the CRA. I will be mentoring an undergraduate student on a developing HCI project.</li>
+            <li class="publication">Our research collaboration between STIW Lab and Sensify Lab (University of Delaware), <i>Regulating Social Media: Surveying the Impact of Nepali Government's TikTok Ban</i>, has been accepted to CSCW 2025!</li>
+            <li class="academic">I was selected to teach for the NOUR Program, which is designed to give undergraduate students a first experience in research over the summer semester. I ran learning sessions on topics such as citation management, quantatative statistics, and poster design.</li>
+            <li class="publication">Research with Joey Hou (first author) and Dr. Lorraine Li has been accepted as a workshop paper for the iRAISE workshop at AAAI, <i>Improve LLM-based Automatic Essay Scoring with Linguistic Features</i></li>
+        </ul>
+    </article>
+</section>
+    
