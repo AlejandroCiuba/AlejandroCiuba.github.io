@@ -4,7 +4,7 @@ layout: default
 
 
 <section>
-    <article>
+    <article id="">
         {% capture information %}
         {% include_relative index/information-section.md %}
         {% endcapture %}
