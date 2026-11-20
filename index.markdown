@@ -5,7 +5,10 @@ layout: default
 
 <section>
     <article>
+        {% capture information %}
         {% include_relative index/information-section.md %}
+        {% endcapture %}
+        {{ information | markdownify }}
     </article>
 </section>
 
